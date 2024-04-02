@@ -40,7 +40,14 @@ update pessoas set peso = '65.3' where id = 4;
 update pessoas set peso = '130.8' where id = 1;
 update pessoas set nome = 'Godofredo' where id = 1; */
 
+/*--alterando a estrutura da tabela
+alter table pessoas add column profissao varchar(10);
+alter table pessoas drop column profissao;
+alter table pessoas add column profissao varchar(30) after nome;
+-Se quiser inserir a nova coluna na primeira posição basta 
+trocar 'after nome' por 'first';*/
 
+alter table pessoas modify profissao varchar(50) default 'teste';
 
 select * from pessoas;
 
