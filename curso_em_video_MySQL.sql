@@ -40,15 +40,35 @@ update pessoas set peso = '65.3' where id = 4;
 update pessoas set peso = '130.8' where id = 1;
 update pessoas set nome = 'Godofredo' where id = 1; */
 
-/*--alterando a estrutura da tabela
+/*--alterando a estrutura da tabela pessoas
 alter table pessoas add column profissao varchar(10);
 alter table pessoas drop column profissao;
 alter table pessoas add column profissao varchar(30) after nome;
 -Se quiser inserir a nova coluna na primeira posição basta 
-trocar 'after nome' por 'first';*/
+trocar 'after nome' por 'first';
+alter table pessoas modify column profissao varchar(40) default 'teste'
+alter table pessoas rename to pessoa;
+;*/
 
-alter table pessoas modify profissao varchar(50) default 'teste';
+/*-- criação da tabela curso
+create table if not exists curso (
+nome varchar(30) not null unique, 
+descrcao text,
+carga int unsigned,
+totaulas int,
+ano year default '2016'
+) default charset = utf8mb4;*/
 
-select * from pessoas;
+/*--alterando estrutura tabela curso
+alter table curso add column idcurso int not null first;
+alter table curso add primary key (idcurso);
+alter table curso modify column idcurso int not null auto_increment;
+*/
+
+
+
+desc curso
+
+
 
 
